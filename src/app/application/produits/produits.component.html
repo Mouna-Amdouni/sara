@@ -1,0 +1,21 @@
+<h1><strong>Listes des produits</strong></h1>
+     
+<input [(ngModel)]="pri" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+               <button (click)="recherche(pr)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search </button>
+
+<table class="table-condensed" >
+    <tr  class="success">
+        <td *ngFor="let i of image">  <img  width="250px" height="200px" class="img-rounded" src={{i}}><br/></td><br/></tr><br/>
+       <tr> <td  *ngFor="let p of lesProduits">
+           <p class="text-justify text-center badge badge-primary text-wrap">  id:  {{p.id}} </p>
+          <p class="bg-primary"> Libellé:   {{p.libelle}}</p>
+           <p class="bg-danger">   prix:{{p.prix}} $</p>
+              <p  class="bg-warning">       <a [routerLink]="['/produits',p.id,p.prix,p.libelle] "> voir plus de Detail</a>
+              
+
+       </td>
+    </tr>
+
+</table>
+<button (click)="menu()">Retour</button>
+<button (click)="ajout()">aller pour ajouter un produit</button>
